@@ -14,19 +14,22 @@ public class Playlist {
 
     public boolean ajouter(Morceau m){
 
+
         boolean present = false;
-        for (Morceau mTemp : this.liste){
-            if (mTemp.equals(m)) {
-                present = true;
+        if (this.nbMorceaux != 0) {
+            for (Morceau mTemp : this.liste) {
+                if (m.equals(mTemp)) {
+                    present = true;
+                }
             }
         }
 
-        if (!present) {
+        if (present) {
+            return false;
+        } else {
             this.liste[this.nbMorceaux] = m;
             this.nbMorceaux += 1;
             return true;
-        } else {
-            return false;
         }
 
     }
@@ -34,7 +37,7 @@ public class Playlist {
     public Duree retourneDuree(){
         Duree dureeTotale = new Duree(0);
         for (Morceau m : this.liste){
-            dureeTotale.ajouter(m.tps);
+            if (m != null) dureeTotale.ajouter(m.tps);
         }
         return dureeTotale;
     }
@@ -42,8 +45,10 @@ public class Playlist {
     public int retourneNbMorceauxDe(String name){
         int compteur = 0;
         for (Morceau m : this.liste){
-            if (m.estDe(name)){
-                compteur += 1;
+            if (m != null) {
+                if (m.estDe(name)) {
+                    compteur += 1;
+                }
             }
         }
         return compteur;
@@ -52,8 +57,10 @@ public class Playlist {
     public Morceau retourneMorceauLePlusLong(){
         Morceau morceauPlusLong = this.liste[0];
         for (Morceau m : this.liste){
-            if (m.tps.estPlusLongueQue(morceauPlusLong.tps)){
-                morceauPlusLong = m;
+            if (m != null) {
+                if (m.tps.estPlusLongueQue(morceauPlusLong.tps)) {
+                    morceauPlusLong = m;
+                }
             }
         }
         return morceauPlusLong;
@@ -62,8 +69,10 @@ public class Playlist {
     public Morceau retourneMorceauLePlusEcoute(){
         Morceau morceauPlusEcoute = this.liste[0];
         for (Morceau m : this.liste){
-            if (m.nbEcoute > morceauPlusEcoute.nbEcoute){
-                morceauPlusEcoute = m;
+            if (m != null) {
+                if (m.nbEcoute > morceauPlusEcoute.nbEcoute) {
+                    morceauPlusEcoute = m;
+                }
             }
         }
         return morceauPlusEcoute;
@@ -71,7 +80,7 @@ public class Playlist {
 
     public void ecouterTout(){
         for (Morceau m : this.liste){
-            m.nbEcoute += 1;
+            if (m != null) m.nbEcoute += 1;
         }
     }
 
