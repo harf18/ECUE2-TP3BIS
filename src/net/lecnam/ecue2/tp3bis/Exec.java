@@ -1,6 +1,8 @@
 package net.lecnam.ecue2.tp3bis;
 
 
+import java.util.Arrays;
+
 public class Exec  {
 
     public static void main(String[] args) {
@@ -47,6 +49,11 @@ public class Exec  {
 
         Playlist playlist = new Playlist("ZINZIN");
 
+        System.out.println(playlist.ajout(morceau));
+
+        System.out.println(Arrays.toString(playlist.morceau));
+
+        System.out.println(playlist.ajout(morceau));
     }
 
 }
