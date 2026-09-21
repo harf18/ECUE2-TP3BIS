@@ -43,4 +43,32 @@ public class Playlist {
         return nbMorceauArtiste;
     }
 
+    public Morceau retourneMorceauLePlusLong() {
+        Duree dureeNull = new Duree(0);
+        Morceau morceauLePlusLong = new Morceau("","",dureeNull);
+        for (int i = 0; i < nbmorceau; i++) {
+            if (morceau[i].duree.estPlusLongueQue(morceauLePlusLong.duree)) {
+                morceauLePlusLong = morceau[i];
+            }
+        }
+        return morceauLePlusLong;
+    }
+
+    public Morceau retourneMorceauLePlusEcouter() {
+        Duree dureeNull = new Duree(0);
+        Morceau morceauLePlusEcouter = new Morceau("","",dureeNull);
+        for (int i = 0; i < nbmorceau; i++) {
+            if (morceau[i].nbecoute > morceauLePlusEcouter.nbecoute) {
+                morceauLePlusEcouter = morceau[i];
+            }
+        }
+        return morceauLePlusEcouter;
+    }
+
+    public void eccouterTout() {
+        for (int i = 0; i < nbmorceau; i++) {
+            morceau[i].ecouter();
+        }
+    }
+
 }

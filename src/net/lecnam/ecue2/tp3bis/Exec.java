@@ -62,6 +62,14 @@ public class Exec  {
         System.out.println(playlist.retourneDureeTotale());
 
         System.out.println(playlist.retourneNbMorceauxDe("Luis Fonzi"));
+
+        System.out.println(playlist.retourneMorceauLePlusLong());
+
+        System.out.println(playlist.retourneMorceauLePlusEcouter());
+
+        playlist.eccouterTout();
+
+        System.out.println(Arrays.toString(playlist.morceau));
     }
 
 }
