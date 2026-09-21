@@ -45,6 +45,8 @@ public class Exec  {
 
         System.out.println(morceau.toString());
 
+        Playlist playlist = new Playlist("ZINZIN");
+
     }
 
 }
