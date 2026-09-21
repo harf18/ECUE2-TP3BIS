@@ -48,6 +48,31 @@ public class Playlist {
         }
         return compteur;
     }
-    
+
+    public Morceau retourneMorceauLePlusLong(){
+        Morceau morceauPlusLong = this.liste[0];
+        for (Morceau m : this.liste){
+            if (m.tps.estPlusLongueQue(morceauPlusLong.tps)){
+                morceauPlusLong = m;
+            }
+        }
+        return morceauPlusLong;
+    }
+
+    public Morceau retourneMorceauLePlusEcoute(){
+        Morceau morceauPlusEcoute = this.liste[0];
+        for (Morceau m : this.liste){
+            if (m.nbEcoute > morceauPlusEcoute.nbEcoute){
+                morceauPlusEcoute = m;
+            }
+        }
+        return morceauPlusEcoute;
+    }
+
+    public void ecouterTout(){
+        for (Morceau m : this.liste){
+            m.nbEcoute += 1;
+        }
+    }
 
 }
