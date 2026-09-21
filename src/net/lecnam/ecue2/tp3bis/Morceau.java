@@ -27,9 +27,17 @@ public class Morceau {
     }
 
     public boolean estDe(String artiste){
-        return (artiste.toLowerCase() == this.artiste.toLowerCase());
+        return (artiste.toLowerCase().equals(this.artiste.toLowerCase()));
     }
 
+    public boolean equals(Morceau m){
+        if (this == m) return true;
+        if (m == null || m.getClass() != getClass()) return false;
+        return (m.artiste == this.artiste && m.titre == this.titre);
+    }
 
+    public String toString(){
+        return this.titre + " - " + this.artiste + " (" + this.tps.toString() + ") - " + this.nbEcoute + " " + (this.nbEcoute <= 1 ? "écoute" : "écoutes");
+    }
 
 }
