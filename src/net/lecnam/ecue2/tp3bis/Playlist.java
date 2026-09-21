@@ -6,4 +6,12 @@ public class Playlist {
     Morceau[] liste;
     int nbMorceaux;
 
+    public Playlist(String nom){
+        this.nom = nom;
+        this.liste = new Morceau[20];
+        this.nbMorceaux = 0;
+    }
+
+    
+
 }
