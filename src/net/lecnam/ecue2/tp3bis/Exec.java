@@ -28,6 +28,11 @@ public class Exec  {
         System.out.println(duree.estPlusLongueQue(duree3));
 
         System.out.println(duree.toString());
+
+        Morceau morceau = new Morceau("La vida loca", "Luis Fonzi", duree);
+
+        Morceau morceau2 = new Morceau("La casa de cabron", "La MAMA", 1,59);
+        
     }
 
 }
