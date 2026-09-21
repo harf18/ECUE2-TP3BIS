@@ -56,7 +56,7 @@ public class Duree {
      }
      @Override
      public String toString() {
-         return String.format("\n%d:%02d\n",this.getSecondes(), this.getSecondes());
+         return String.format("\n%d:%02d\n",this.getMinute(), this.getSecondes());
      }
 
 }
