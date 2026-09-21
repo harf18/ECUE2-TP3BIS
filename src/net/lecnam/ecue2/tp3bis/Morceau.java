@@ -1,5 +1,7 @@
 package net.lecnam.ecue2.tp3bis;
 
+import java.util.Locale;
+
 public class Morceau {
 
     String titre, artiste;
@@ -18,6 +20,14 @@ public class Morceau {
         this.artiste = artist;
         this.tps = new Duree(minutes, secondes);
         this.nbEcoute = 0;
+    }
+
+    public void ecouter(){
+        this.nbEcoute += 1;
+    }
+
+    public boolean estDe(String artiste){
+        return (artiste.toLowerCase() == this.artiste.toLowerCase());
     }
 
 
