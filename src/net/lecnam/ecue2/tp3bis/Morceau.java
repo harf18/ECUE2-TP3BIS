@@ -19,4 +19,16 @@ public class Morceau {
         this.duree = new Duree(minute, seconde);
         this.nbecoute = 0;
     }
+
+    public void ecouter() {
+        this.nbecoute += 1;
+    }
+
+    public boolean estDe(String artiste) {
+        if (this.artiste == artiste) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
