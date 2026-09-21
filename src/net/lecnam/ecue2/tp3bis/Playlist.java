@@ -25,4 +25,22 @@ public class Playlist {
         return true;
     }
 
+    public Duree retourneDureeTotale() {
+        Duree dureeTotale = new Duree(0,0);
+        for (int i = 0; i < nbmorceau; i++) {
+            dureeTotale.ajouter(morceau[i].duree);
+        }
+        return dureeTotale;
+    }
+
+    public int retourneNbMorceauxDe(String artiste) {
+        int nbMorceauArtiste = 0;
+        for (int i = 0; i < nbmorceau; i++) {
+            if (morceau[i].artiste == artiste) {
+                nbMorceauArtiste += 1;
+            }
+        }
+        return nbMorceauArtiste;
+    }
+
 }

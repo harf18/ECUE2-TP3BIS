@@ -54,6 +54,14 @@ public class Exec  {
         System.out.println(Arrays.toString(playlist.morceau));
 
         System.out.println(playlist.ajout(morceau));
+
+        playlist.ajout(morceau2);
+
+        System.out.println(Arrays.toString(playlist.morceau));
+
+        System.out.println(playlist.retourneDureeTotale());
+
+        System.out.println(playlist.retourneNbMorceauxDe("Luis Fonzi"));
     }
 
 }
