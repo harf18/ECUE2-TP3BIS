@@ -12,6 +12,22 @@ public class Playlist {
         this.nbMorceaux = 0;
     }
 
-    
+    public boolean ajouter(Morceau m){
+
+        boolean present = false;
+        for (Morceau mTemp : this.liste){
+            if (mTemp.equals(m)) {
+                present = true;
+            }
+        }
+
+        if (!present) {
+            this.liste[this.nbMorceaux] = m;
+            this.nbMorceaux += 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
