@@ -31,4 +31,17 @@ public class Morceau {
             return false;
         }
     }
+
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Morceau morceau = (Morceau) o;
+        return this.titre == morceau.titre
+                && this.artiste == morceau.artiste;
+    }
+
+    public String toString() {
+        return this.artiste + " - " + this.titre + " (" + String.format("%d:%02d", this.duree.minute, this.duree.seconde) + ") - " + this.nbecoute + " écoutes";
+    }
 }

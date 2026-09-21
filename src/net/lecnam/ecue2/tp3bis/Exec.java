@@ -33,11 +33,17 @@ public class Exec  {
 
         Morceau morceau2 = new Morceau("La casa de cabron", "La MAMA", 1,59);
 
+        Morceau morceau3 = new Morceau("La vida loca", "Luis Fonzi", duree);
+
         morceau.ecouter();
 
         System.out.println(morceau.nbecoute);
 
         System.out.println(morceau.estDe("Luis Fonzi"));
+
+        System.out.println(morceau.equals(morceau3));
+
+        System.out.println(morceau.toString());
 
     }
 
