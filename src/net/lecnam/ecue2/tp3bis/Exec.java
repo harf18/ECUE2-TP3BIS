@@ -55,6 +55,8 @@ public class Exec  {
 
         System.out.println(playlist.ajout(morceau));
 
+        System.out.println(playlist.ajout(morceau));
+
         playlist.ajout(morceau2);
 
         System.out.println(Arrays.toString(playlist.morceau));
