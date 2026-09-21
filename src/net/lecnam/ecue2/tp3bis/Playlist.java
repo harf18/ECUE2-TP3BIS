@@ -28,6 +28,26 @@ public class Playlist {
         } else {
             return false;
         }
+
     }
+
+    public Duree retourneDuree(){
+        Duree dureeTotale = new Duree(0);
+        for (Morceau m : this.liste){
+            dureeTotale.ajouter(m.tps);
+        }
+        return dureeTotale;
+    }
+
+    public int retourneNbMorceauxDe(String name){
+        int compteur = 0;
+        for (Morceau m : this.liste){
+            if (m.estDe(name)){
+                compteur += 1;
+            }
+        }
+        return compteur;
+    }
+    
 
 }
